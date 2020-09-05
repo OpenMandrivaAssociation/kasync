@@ -5,7 +5,7 @@
 %define stable unstable
 
 Name:		kasync
-Version:	0.2.0
+Version:	0.3.0
 Release:	1
 Source0:	http://download.kde.org/%{stable}/kasync/%{version}/src/%{name}-%{version}.tar.xz
 Summary:	KDE library for writing asynchronous code
