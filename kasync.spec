@@ -1,13 +1,18 @@
 %define major 0
-%define libname %mklibname KAsync %{major}
+%define libname %mklibname KAsync
 %define devname %mklibname KAsync -d
 # Doesn't follow usual versioning schemes yet -- always unstable for now
 %define stable unstable
+%define git 20230809
 
 Name:		kasync
-Version:	0.3.0
-Release:	2
+Version:	0.3.1
+Release:	%{?git:0.%{git}.}1
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/libraries/kasync/-/archive/master/kasync-master.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/kasync/%{version}/src/%{name}-%{version}.tar.xz
+%endif
 Summary:	KDE library for writing asynchronous code
 URL: http://kde.org/
 License: GPL
@@ -38,8 +43,7 @@ Requires: %{libname} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1 -n %{name}-%{?git:master}%{!?git:%{version}}
 %cmake_kde5
 
 %build
