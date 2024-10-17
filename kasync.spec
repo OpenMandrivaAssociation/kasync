@@ -14,7 +14,7 @@ Source0:	https://invent.kde.org/libraries/kasync/-/archive/master/kasync-master.
 Source0:	http://download.kde.org/%{stable}/kasync/%{version}/src/%{name}-%{version}.tar.xz
 %endif
 Summary:	KDE library for writing asynchronous code
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
